@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://iranalabs.com/sitemap.xml

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Irana Labs</title>
+  <defs>
+    <linearGradient id="mark" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#7fe0c3"/>
+      <stop offset="1" stop-color="#79a8ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="20" fill="#121a2a"/>
+  <path d="M32 13a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm-7 17h14v21H25z" fill="url(#mark)"/>
+</svg>
