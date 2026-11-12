@@ -22,9 +22,10 @@ The workflow in `.github/workflows/pages.yml` deploys `site/` on every push to
 is configured to use **GitHub Actions**. The default Pages URL is
 <https://iranalabs.github.io/>.
 
-`site/CNAME` declares `iranalabs.com` as the custom domain. Confirm it appears
-under **Settings > Pages** after the first deployment. At the domain registrar,
-configure the apex (`@`) with the four GitHub Pages A records:
+To use `iranalabs.com`, a repository administrator must set it as the custom
+domain under **Settings > Pages**. A `CNAME` file in the deployed artifact does
+not configure the domain for an Actions-based deployment. At the domain
+registrar, configure the apex (`@`) with the four GitHub Pages A records:
 
 ```text
 185.199.108.153
