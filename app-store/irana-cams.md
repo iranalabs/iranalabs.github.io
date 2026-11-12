@@ -47,7 +47,7 @@ Explore simulated cameras, dashboards, and controls without connecting a physica
 
 PRIVACY AND SYNC
 
-- Camera video connects directly to your device; Irana Labs does not operate a video relay.
+- Camera video connects directly to your device; iRana Labs does not operate a video relay.
 - Optional iCloud sync is off by default and stores camera configuration in your private iCloud database.
 - Camera passwords are kept in Apple Keychain and are not stored in CloudKit records.
 - Uploading snapshots to iCloud requires a separate opt-in.
@@ -81,7 +81,7 @@ Suggested App Review Notes:
 ## Suggested listing setup
 
 - Primary category: Utilities (confirm this fits the final listing).
-- Copyright: `2026 Irana Labs` (use the correct legal rights holder).
+- Copyright: `2026 iRana Labs` (use the correct legal rights holder).
 - Complete the age-rating questionnaire from the app's actual content and controls.
 - Review App Privacy answers against the published policy and `PrivacyInfo.xcprivacy`.
 - Complete export-compliance questions in App Store Connect; the project currently

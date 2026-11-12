@@ -1,4 +1,4 @@
-# Irana Labs website
+# iRana Labs website
 
 Static website source for [iranalabs.com](https://iranalabs.com), published
 from the public [`iranalabs/iranalabs.github.io`](https://github.com/iranalabs/iranalabs.github.io)
@@ -66,7 +66,7 @@ writes to `site/assets/screenshots/`.
 
 ## Site pages
 
-- `/` - Irana Labs
+- `/` - iRana Labs
 - `/apps/` - Apps
 - `/apps/irana-cams/` - iRana Cams
 - `/apps/irana-cams/privacy/` - iRana Cams privacy policy
