@@ -48,9 +48,9 @@ Explore simulated cameras, dashboards, and controls without connecting a physica
 PRIVACY AND SYNC
 
 - Camera video connects directly to your device; iRana Labs does not operate a video relay.
-- Optional iCloud sync is off by default and stores camera configuration in your private iCloud database.
+- Optional iCloud sync is off by default and syncs camera configuration, dashboards, and supported settings across your devices through your private iCloud database.
 - Camera passwords are kept in Apple Keychain and are not stored in CloudKit records.
-- Uploading snapshots to iCloud requires a separate opt-in.
+- Uploading in-app snapshots to iCloud requires a separate opt-in. Video recordings are not uploaded through iRana Cams' iCloud sync.
 
 Camera compatibility depends on firmware, stream configuration, and network.
 Some discovery may be limited by router or subnet settings; cameras can also be
@@ -117,7 +117,9 @@ the required Dynamic Island medium iPhone and 13-inch iPad sizes:
 - iPhone 18 Pro portrait: 1206 x 2622 pixels
 - iPad portrait: 2064 x 2752 pixels
 
-The generated assets are `01-cameras.jpg`, `02-dashboard.jpg`, and
-`03-live-view.jpg` in each device folder.
+The generated assets are `01-cameras.jpg`, `02-dashboard.jpg`,
+`03-live-view.jpg`, `04-controls.jpg`, and `05-ptz.jpg` in each device folder.
+Each includes a simple bottom home indicator and no notch or hardware buttons,
+and can be uploaded directly to App Store Connect.
 
 Confirm the current App Store Connect screenshot specifications when uploading.

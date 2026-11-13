@@ -61,8 +61,9 @@ opaque JPEGs used on the site and in App Store Connect:
 python3 scripts/build_store_screenshots.py
 ```
 
-The script requires librsvg (`rsvg-convert`) and ImageMagick (`magick`), and
-writes to `site/assets/screenshots/`.
+The generated images include a simple bottom home indicator, with no notch or
+hardware buttons. The script requires librsvg (`rsvg-convert`) and ImageMagick
+(`magick`), and writes to `site/assets/screenshots/`.
 
 ## Site pages
 
