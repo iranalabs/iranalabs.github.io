@@ -484,6 +484,31 @@ h1 .accent {
   background: #e9edf4;
 }
 
+.device-shot {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.home-indicator {
+  position: absolute;
+  z-index: 1;
+  top: 96.7%;
+  left: 50%;
+  width: 28%;
+  height: .45%;
+  min-height: 2px;
+  border-radius: 999px;
+  background: #101116;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+.home-indicator--light {
+  background: #f5f6f8;
+  box-shadow: 0 0 1px rgba(0, 0, 0, .45);
+}
+
 .screen-card figcaption {
   padding: 13px 4px 3px;
   color: var(--muted);
@@ -598,6 +623,7 @@ h1 .accent {
   .product-section { padding: 35px 0 58px; }
   .screenshots { grid-template-columns: 1fr; gap: 14px; }
   .screen-card { padding: 8px; border-radius: 16px; }
+  .device-shot { border-radius: 10px; }
   .screen-card img { border-radius: 10px; }
   .screen-card figcaption { font-size: .76rem; }
   .product-features { grid-template-columns: 1fr; gap: 10px; }
