@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Compose App Store images around genuine iRana Cams simulator captures."""
 
-import base64
+import shutil
 import subprocess
 import tempfile
 from pathlib import Path
@@ -79,7 +79,7 @@ DEVICES = {
 
 
 def screenshot_svg(
-    image_path: Path,
+    image_reference: str,
     device: dict,
     title_lines: tuple[str, str],
     subtitle: str,
@@ -97,7 +97,6 @@ def screenshot_svg(
     frame_y = device["screen_y"]
     screen_x = frame_x + bezel
     screen_y = frame_y + bezel
-    image = base64.b64encode(image_path.read_bytes()).decode("ascii")
     title_one, title_two = title_lines
     indicator = device["home_indicator"]
     indicator_width = screen_width * indicator["width"]
@@ -151,7 +150,7 @@ def screenshot_svg(
   <text x="{width // 2}" y="{device['title_y'][1]}" text-anchor="middle" fill="#172033" font-family="Arial, Helvetica, sans-serif" font-size="{device['title_size']}" font-weight="700" letter-spacing="-2">{title_two}</text>
   <text x="{width // 2}" y="{device['subtitle_y']}" text-anchor="middle" fill="#5c687b" font-family="Arial, Helvetica, sans-serif" font-size="{device['subtitle_size']}">{subtitle}</text>
   <rect x="{frame_x}" y="{frame_y}" width="{frame_width}" height="{frame_height}" rx="62" fill="#121a2a" filter="url(#shadow)"/>
-  <image x="{screen_x}" y="{screen_y}" width="{screen_width}" height="{screen_height}" preserveAspectRatio="none" clip-path="url(#screen)" href="data:image/png;base64,{image}"/>
+  <image x="{screen_x}" y="{screen_y}" width="{screen_width}" height="{screen_height}" preserveAspectRatio="none" clip-path="url(#screen)" href="{image_reference}"/>
   {corner_cleanup}
   <rect x="{indicator_x:.2f}" y="{indicator_y:.2f}" width="{indicator_width:.2f}" height="{indicator_height:.2f}" rx="{indicator_height / 2:.2f}" fill="{home_indicator_color}"{indicator_stroke}/>
 </svg>"""
@@ -173,15 +172,17 @@ def main() -> None:
                 raise FileNotFoundError(f"Missing genuine app capture: {source}")
             output.parent.mkdir(parents=True, exist_ok=True)
             cleanup_color = corner_cleanup_color if device_name == "ipad" else ""
-            markup = screenshot_svg(
-                source,
-                device,
-                title_lines,
-                subtitle,
-                home_indicator_color,
-                cleanup_color,
-            )
             with tempfile.TemporaryDirectory() as temp_dir:
+                source_copy = Path(temp_dir) / source.name
+                shutil.copyfile(source, source_copy)
+                markup = screenshot_svg(
+                    source_copy.name,
+                    device,
+                    title_lines,
+                    subtitle,
+                    home_indicator_color,
+                    cleanup_color,
+                )
                 svg_path = Path(temp_dir) / "screenshot.svg"
                 png_path = Path(temp_dir) / "screenshot.png"
                 svg_path.write_text(markup, encoding="utf-8")
