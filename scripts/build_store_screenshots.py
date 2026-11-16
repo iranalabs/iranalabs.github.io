@@ -145,7 +145,7 @@ def screenshot_svg(
   <rect width="{width}" height="{height}" fill="#f5f8fc"/>
   <circle cx="{round(width * .86)}" cy="{round(height * .15)}" r="{round(width * .31)}" fill="#c6eee2" opacity=".65"/>
   <circle cx="{round(width * .08)}" cy="{round(height * .31)}" r="{round(width * .17)}" fill="#d9e5fc" opacity=".75"/>
-  <text x="{width // 2}" y="{device['eyebrow_y']}" text-anchor="middle" fill="#4a6f9c" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700" letter-spacing="3">iRana Cams  /  Demo Mode</text>
+  <text x="{width // 2}" y="{device['eyebrow_y']}" text-anchor="middle" fill="#4a6f9c" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700" letter-spacing="3">iRana Cams</text>
   <text x="{width // 2}" y="{device['title_y'][0]}" text-anchor="middle" fill="#172033" font-family="Arial, Helvetica, sans-serif" font-size="{device['title_size']}" font-weight="700" letter-spacing="-2">{title_one}</text>
   <text x="{width // 2}" y="{device['title_y'][1]}" text-anchor="middle" fill="#172033" font-family="Arial, Helvetica, sans-serif" font-size="{device['title_size']}" font-weight="700" letter-spacing="-2">{title_two}</text>
   <text x="{width // 2}" y="{device['subtitle_y']}" text-anchor="middle" fill="#5c687b" font-family="Arial, Helvetica, sans-serif" font-size="{device['subtitle_size']}">{subtitle}</text>
